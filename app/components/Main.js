@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, KeyboardAvoidingView, TextInput, ScrollView,TouchableOpacity } from 'react-native';
-import RadioForm from './node_modules/react-native-radio-form';
+import RadioForm from '../../node_modules/react-native-radio-form';
 import Task from './Task'
 
 const radioData = [
