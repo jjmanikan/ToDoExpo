@@ -52,6 +52,10 @@ export default class Main extends React.Component {
           {tasks}
         </ScrollView>
 
+        <RadioForm dataSource={radioData} 
+          itemShowKey= "labels" itemRealKey= "value" 
+          circleSize = {16} initial={1} 
+          formHorizontal={true} labelHorizontal={true} onPress={this.onSelect(item)}/>          
           
       
         <KeyboardAvoidingView style={styles.input} behavior="padding" enabled>
