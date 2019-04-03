@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, KeyboardAvoidingView, TextInput, ScrollView,TouchableOpacity } from 'react-native';
-import RadioForm from 'react-native-radio-form';
+import RadioForm from './node_modules/react-native-radio-form';
 import Task from './Task'
 
 const radioData = [
@@ -52,10 +52,6 @@ export default class Main extends React.Component {
           {tasks}
         </ScrollView>
 
-        <RadioForm style={} dataSource={radioData} 
-          itemShowKey= "labels" itemRealKey= "value" 
-          circleSize = {16} initial={1} 
-          formHorizontal={true} labelHorizontal={true} onPress={this.onSelect(item)}/>          
           
       
         <KeyboardAvoidingView style={styles.input} behavior="padding" enabled>
