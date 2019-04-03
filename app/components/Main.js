@@ -6,12 +6,14 @@ import Task from './Task'
 const radioData = [
   {
     labels: 'High',
-    value: '1'
+    value: '1',
+    style: {borderLeftColor: 'red'}
   },
 
   {
     labels: 'Medium',
     value: '2'
+
   },
 
   {
@@ -31,7 +33,7 @@ export default class Main extends React.Component {
 
   }
 
-  onSelect = (item) => {
+  _onSelect = (item) => {
     console.log(item);
   };
   
@@ -51,14 +53,13 @@ export default class Main extends React.Component {
         <ScrollView style={styles.scrollContainer}>
           {tasks}
         </ScrollView>
-
-        <RadioForm dataSource={radioData} 
-          itemShowKey= "labels" itemRealKey= "value" 
-          circleSize = {16} initial={1} 
-          formHorizontal={true} labelHorizontal={true} onPress={this.onSelect(item)}/>          
-          
-      
+        
         <KeyboardAvoidingView style={styles.input} behavior="padding" enabled>
+          <RadioForm style = {styles.radioForm } dataSource={radioData} 
+            itemShowKey= "labels" itemRealKey= "value" 
+            circleSize = {16} initial={1} 
+            formHorizontal={true} labelHorizontal={true} onPress={(item) => this._onSelect(item)}/>          
+
           <TextInput style={styles.textInput}
             onChangeText = {(taskText) => this.setState({taskText})}
             value= {this.state.taskText}
@@ -66,13 +67,17 @@ export default class Main extends React.Component {
             placeholderTextColor = 'white'
             underlineColorAndroid = 'transparent'>
           </TextInput>
+
+          
         </KeyboardAvoidingView>
 
+        
         <TouchableOpacity
             onPress = {this.addTask.bind(this)}
             style={styles.addTask}>
             <Text style = {styles.addTaskText}>+</Text>
         </TouchableOpacity>
+
 
       </View>
     );
@@ -126,8 +131,15 @@ const styles = StyleSheet.create({
 
   scrollContainer: {
     flex: 1,
+    position: 'relative',
     marginBottom: 100,
     
+  },
+
+  radioForm:{
+    position: 'relative',
+    backgroundColor:'lightblue'
+
   },
 
   input:{
