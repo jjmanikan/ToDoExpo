@@ -1,5 +1,5 @@
-import React from "react";
-import {StyleSheet} from "react-native";
+
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
 
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     taskText:{
         paddingLeft: 20,
         borderLeftWidth: 10,
-        borderLeftColor: '#e91e63'
+        borderLeftColor: 'lightblue'
     },
 
     taskDelete: {

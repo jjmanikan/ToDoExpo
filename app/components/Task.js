@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import styles from "./../styles/styles.js"
+import { Text, View, TouchableOpacity } from 'react-native';
+import styles from "./../css/styles"
 
 export default class Task extends React.Component {
   render() {
