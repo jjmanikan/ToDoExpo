@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, ScrollView,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, ScrollView,TouchableOpacity } from 'react-native';
 import Task from './Task'
 
 export default class Main extends React.Component {
@@ -30,23 +30,22 @@ export default class Main extends React.Component {
           {tasks}
         </ScrollView>
 
-        <View style={styles.input}>
+      
+        <KeyboardAvoidingView style={styles.input} behavior="padding" enabled>
           <TextInput style={styles.textInput}
             onChangeText = {(taskText) => this.setState({taskText})}
             value= {this.state.taskText}
             placeholder = 'Input Task Here'
             placeholderTextColor = 'white'
             underlineColorAndroid = 'transparent'>
-
-
-            </TextInput>
-        </View>
+          </TextInput>
+        </KeyboardAvoidingView>
 
         <TouchableOpacity
-          onPress = {this.addTask.bind(this)}
-          style={styles.addTask}>
-          <Text style = {styles.addTaskText}>+</Text>
-        </TouchableOpacity>
+            onPress = {this.addTask.bind(this)}
+            style={styles.addTask}>
+            <Text style = {styles.addTaskText}>+</Text>
+          </TouchableOpacity>
 
       </View>
     );
